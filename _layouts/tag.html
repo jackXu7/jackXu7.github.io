@@ -26,7 +26,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/tongji.js"></script>
   </head>
-  
+
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -50,7 +50,7 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          {% include navigation.html %} 
+          {% include navigation.html %}
         </div>
         <!-- /.navbar-collapse -->
       </div>
@@ -60,7 +60,7 @@
     <div class="container">
       <div class="row">
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-12">
           <!-- Navi -->
           <div class="post_frame">
             <div class="post_navi">
@@ -72,7 +72,7 @@
 					<h2>
 					  <a href="{{ post.url }}">
 						{{ post.title }}
-					  </a> 
+					  </a>
 					  <div class="post-date">
 						<span class="glyphicon glyphicon-time"></span>
 						{{ post.date | date:"%Y-%m-%d" }}
@@ -86,61 +86,7 @@
             </div>
           </div>
         </div>
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-          <!-- Side Widget Well -->
-          <div class="well">
-            <h4>
-              推荐链接
-            </h4>
-			      <div class="row">
-            {% include recommend_link.html %} 
-            </div>
-          </div>
-
-          <!-- Side Widget Well -->
-          <div class="well-ad">
-            {% include adsense_336x280.html %} 
-          </div>
-
-		      <!-- Blog Recent Well -->
-          <div class="well">
-            <h4>
-              最新文章
-            </h4>
-            <div class="row">
-                    {% include recent_posts.html %} 
-            </div>
-          </div>		  
-          
-		      <!-- Blog Links Well -->
-          <div class="well">
-            <h4>
-              友情链接
-            <div class="linkme">
-            <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w7SqraWqsa6DsrLtoKyu" target="_blank">
-              <span class="linkme_span">交换链接</span>
-            </a>
-            </div>
-            </h4>
-            {% include friendlinks.html %} 
-          </div>
-        </div>
       </div>
-      <!-- /.row -->
-
-      <!-- Footer -->
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            {% include copyright.html %} 
-          </div>
-          <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-      </footer>
     </div>
-    <!-- /.container -->
-    {% include spider.html %} 
   </body>
 </html>

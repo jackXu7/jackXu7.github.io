@@ -4,8 +4,8 @@ title: "lambda表达式笔记"
 author: "zhaopeng"
 date: 2019-04-15
 ---
-java 8 lambda表达式使用小记
-===========================
+java 8 lambda表达式使用小记<!-- more -->
+
 业务需求：从数据库查询到结果是由';'分割的JSONArray字符串，形式上为
 [{"start_time": "08:01:10", "end_time": "18:11:20", "service_name": "mickey_detect"},{"start_time": "10:01:02", "end_time": "20:20:30", "service_name": "chef_detect", "duration": 10}];[{"start_time": "00:01:10", "end_time": "06:11:20", "service_name": "mickey_detect"},{"start_time": "08:11:00", "end_time": "20:20:30", "service_name": "chef_detect", "duration": 20}]
 

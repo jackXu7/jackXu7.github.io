@@ -61,5 +61,42 @@ public class Config {
   public String getServiceName() {
 	return serviceName;
   }
+
+  public static void main(String[] args){
+	List<Config> configs = new ArrayList<>();
+	String configStr = "[" +
+				"{" +
+				"    \"start_time\": \"08:01:10\", " +
+				"    \"end_time\": \"18:11:20\", " +
+				"    \"service_name\": \"mickey_detect\"" +
+				"}," +
+				"{" +
+				"    \"start_time\": \"10:01:02\", " +
+				"    \"end_time\": \"20:20:30\", " +
+				"    \"service_name\": \"chef_detect\", " +
+				"    \"duration\": 10" +
+				"}];" +
+				"[" +
+				"{" +
+				"    \"start_time\": \"00:01:10\"," +
+				"    \"end_time\": \"06:11:20\", " +
+				"    \"service_name\": \"mickey_detect\"" +
+				"}," +
+				"{" +
+				"    \"start_time\": \"08:11:00\", " +
+				"    \"end_time\": \"20:20:30\", " +
+				"    \"service_name\": \"chef_detect\", " +
+				"    \"duration\": 20" +
+				"}]";
+
+	Arrays.stream(configStr.split(Pattern.quote(";")))
+				.forEach(
+						x -> JSONArray.parseArray(x)
+								.stream()
+								.filter(y -> "mickey_detect".equals(((JSONObject) y).get("service_name")))
+								.collect(Collectors.toList())
+								.forEach(o -> configs.add(JSONObject.parseObject(o.toString(), Config.class)))
+				);
+  }
 }
 ```

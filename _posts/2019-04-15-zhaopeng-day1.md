@@ -12,7 +12,7 @@ java 8 lambda表达式使用小记<!-- more -->
 ```javas
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.annotation.JSONType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,14 +20,12 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@JSONType(includes = {"startTime", "endTime", "serviceName"})
 public class Config {
-	@JSONField(name = "start_time")
 	private int startTime;
 
-	@JSONField(name = "end_time")
 	private int endTime;
 
-	@JSONField(name = "service_name")
 	private String serviceName;
 
 	private int time2Second(String timeStr) {

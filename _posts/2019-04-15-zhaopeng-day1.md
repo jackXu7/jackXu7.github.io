@@ -1,3 +1,9 @@
+---
+layout: post
+title: "lambda表达式笔记"
+author: "zhaopeng"
+date: 2019-04-15
+---
 java 8 lambda表达式使用小记
 ===========================
 业务需求：从数据库查询到结果是由';'分割的JSONArray字符串，形式上为
